@@ -1,15 +1,37 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31112.23
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8092C283-8985-47FE-9914-05487D4072A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B41DBBDC-2C6B-4E20-B0E7-402DF3E60911}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenFlux.SmartCharging.API", "src\GreenFlux.SmartCharging.API\GreenFlux.SmartCharging.API.csproj", "{8562D0D6-68E2-4EFC-B965-E6752AE88FFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenFlux.SmartCharging.API.Tests", "tests\GreenFlux.SmartCharging.API.Tests\GreenFlux.SmartCharging.API.Tests.csproj", "{3A0E7B2A-EA5F-46E6-9592-186B50F00CF5}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8562D0D6-68E2-4EFC-B965-E6752AE88FFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8562D0D6-68E2-4EFC-B965-E6752AE88FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8562D0D6-68E2-4EFC-B965-E6752AE88FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8562D0D6-68E2-4EFC-B965-E6752AE88FFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0E7B2A-EA5F-46E6-9592-186B50F00CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0E7B2A-EA5F-46E6-9592-186B50F00CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0E7B2A-EA5F-46E6-9592-186B50F00CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0E7B2A-EA5F-46E6-9592-186B50F00CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8562D0D6-68E2-4EFC-B965-E6752AE88FFA} = {8092C283-8985-47FE-9914-05487D4072A5}
+		{3A0E7B2A-EA5F-46E6-9592-186B50F00CF5} = {B41DBBDC-2C6B-4E20-B0E7-402DF3E60911}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {941F6782-DED4-41CA-89D6-F0038DCC412C}
