@@ -5,17 +5,18 @@ namespace GreenFlux.SmartCharging.API.ModelValidation
 {
     public class NoDuplicatesAttribute : ValidationAttribute
     {
-
-        public override bool IsValid(object? value)
+        
+        protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
             if (value is null)
-                return true;
+                return ValidationResult.Success;
+
             HashSet<Connector> set = new();
             foreach (var element in (IEnumerable<Connector>)value)
                 if (!set.Add(element))
-                    return false;
+                    return new ValidationResult("There are duplicates on connectors.");
 
-            return true;
+            return ValidationResult.Success;
         }
     }
 }

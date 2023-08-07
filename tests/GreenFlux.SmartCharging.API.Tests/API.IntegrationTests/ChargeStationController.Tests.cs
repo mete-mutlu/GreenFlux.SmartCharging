@@ -61,27 +61,6 @@ namespace GreenFlux.SmartCharging.API.Tests.API.IntegrationTests
 
         }
 
-        [Theory]
-        public async Task Create_Should_Return_400BadRequest()
-        {
-            // Arrange
-            var (groupId, _) = SeedData();
-            var model = new CreateChargeStation() { Name = "CS", Connectors = new List<Connector> { new Connector(2, 15) } };
-            var content = new StringContent(JsonSerializer.Serialize(model), Encoding.UTF8, "application/json");
-
-            // Act
-            var response = await _client.PostAsync($"{_controllerBaseRoute}/{groupId}", content);
-
-            // Assert
-            response.EnsureSuccessStatusCode();
-            using var scope = _factory.Services.CreateScope();
-            var dataContext = scope.ServiceProvider.GetRequiredService<DataContext>();
-            var group = dataContext.Groups.Include(p => p.ChargeStations).ThenInclude(p => p.Connectors).Single();
-            group.ChargeStations.Should().ContainEquivalentOf(model);
-
-        }
-
-
 
         [Fact]
         public async Task CreateConnectors_Should_Return_200OK()

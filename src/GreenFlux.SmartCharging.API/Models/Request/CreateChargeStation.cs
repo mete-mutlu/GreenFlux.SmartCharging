@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using GreenFlux.SmartCharging.API.ModelValidation;
+using System.ComponentModel.DataAnnotations;
 
 namespace GreenFlux.SmartCharging.API.Models.Request
 {
@@ -6,6 +7,7 @@ namespace GreenFlux.SmartCharging.API.Models.Request
     {
         [MinLength(1)]
         public required string Name { get; set; }
+        [NoDuplicates]
         public required IEnumerable<Connector> Connectors { get; set; }
     }
 }
